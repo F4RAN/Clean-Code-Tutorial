@@ -1,0 +1,48 @@
+# Cheatsheet
+- ✅ Domain (Entity + Value Object)
+  - Business Rules (Pure english)
+- ✅ Application (Use Case + Port)
+- ✅ Infrastructure (Fake Repository)
+- ✅ Presentation (Simple controller function)
+
+# Problem
+Build a minimal Clean Architecture setup for creating a user with validation and repository storage.
+
+# Solution
+
+## Sequence
+### EPUIC
+Development sequence must be like this
+
+Entity -> Port -> Usecase -> Infrastructure -> Controller
+
+
+---
+### 1) Entity
+
+Business Rules:
+-  *Entities*
+1) User has an ID
+2) User has a phone number
+3) User has a sex
+4) User has a role
+5) User has an age
+
+- *Value Objects*
+1) ID is a sequencial integer
+2) PhoneNumber is a 10 digit field
+3) Sex is male or female
+4) Role can be admin/user/guest
+5) Age is an integer from 0 to 120
+
+--- 
+
+### 2) Port
+
+- Port: *UserRepository* is an interface which specify user's model behaviour without the implementation.
+e.g. save(user) or findById(id)
+
+- UseCase: *CreateUser* is an usecase which use the UserRepository's methods to add some functionalities on domain area.
+
+> *Ports (Repositories)* in fact are an interface between the *Usecases* and *Entities*
+

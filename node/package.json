@@ -1,0 +1,24 @@
+{
+  "name": "mini-cc",
+  "version": "1.0.0",
+  "description": "- ✅ Domain (Entity + Value Object)   - Business Rules (Pure english) - ✅ Application (Use Case + Port) - ✅ Infrastructure (Fake Repository) - ✅ Presentation (Simple controller function)",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tsx main.ts",
+    "dev": "npx tsx main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^7.0.0",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}

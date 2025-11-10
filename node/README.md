@@ -55,3 +55,8 @@ e.g. save(user) or findById(id)
 > You can swap MongoDB for PostgreSQL, MySQL, or an in-memory store without causing any change in application or domain layer.
 ---
 
+### 4) Presentation
+
+*createUserController* connects the framework to the *CreateUser* Usecase so **Controllers** use the UseCases to implement their functionality
+
+---

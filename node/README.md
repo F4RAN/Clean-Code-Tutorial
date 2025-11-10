@@ -60,3 +60,12 @@ e.g. save(user) or findById(id)
 *createUserController* connects the framework to the *CreateUser* Usecase so **Controllers** use the UseCases to implement their functionality
 
 ---
+
+### 5) Aggregation (main.ts)
+
+1) Get DB client (e.g. *MongoClient*)
+2) Create infrastructure repo (*MongoUserRepository*)
+3) Pass *MongoUserRepository*'s instance to *CreateUser* UseCase (It's possible because that infrastructure repository implements port repository)
+4) Pass the *CreateUser* UseCase to the *createUserController*
+5) Controller execute the UseCase
+

@@ -2,14 +2,12 @@ import express from "express";
 import { MongoUserRepository } from "./infrastructure/MongoUserRepository";
 import { CreateUser } from "./application/usecases/CreateUser";
 import { createUserController } from "./presentation/http/CreateUserController.js";
-import { MongoClient } from "mongodb";
+import { getMongoClient } from "./config/db.js";
+
 
 async function start() {
-    const mongo = new MongoClient("mongodb://localhost:27017");
-    await mongo.connect();
-    const mongodb = mongo.db("Mini-CC");
-    
-    const repo = new MongoUserRepository(mongodb);
+    const mongo = await getMongoClient()
+    const repo = new MongoUserRepository(mongo);
     const createUser = new CreateUser(repo);
     
     const app = express();
